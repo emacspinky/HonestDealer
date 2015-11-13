@@ -1,0 +1,32 @@
+{
+  "siteName": {
+    "value": "HonestDealer"
+  },
+  "hostingPlanName": {
+    "value": "StandardWeb"
+  },
+  "siteLocation": {
+    "value": "South Central US"
+  },
+  "sku": {
+    "value": "Free"
+  },
+  "workerSize": {
+    "value": "0"
+  },
+  "serverName": {
+    "value": "honestdealerserver"
+  },
+  "serverLocation": {
+    "value": "South Central US"
+  },
+  "administratorLogin": {
+    "value": "dbadmin"
+  },
+  "administratorLoginPassword": {
+    "value": "Honesty2300"
+  },
+  "databaseName": {
+    "value": "HonestDealer_db"
+  }
+}

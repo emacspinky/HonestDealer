@@ -29,5 +29,7 @@ namespace HonestDealer.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<HonestDealer.Models.Contact> Contacts { get; set; }
     }
 }

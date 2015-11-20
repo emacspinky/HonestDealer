@@ -58,11 +58,11 @@ namespace HonestDealer
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "742316787887-s1els5chiva8mdlop9non8lq8rlejh12.apps.googleusercontent.com",
+                ClientSecret = "1t7w4OD2BuisV879H3tLbrA_"
+            });
         }
     }
 }

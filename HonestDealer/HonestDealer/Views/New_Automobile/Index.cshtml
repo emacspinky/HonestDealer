@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HonestDealer.Models.New_Automobile>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Automobile.Transmission)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Manuf_warranty)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Automobile.Transmission)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Manuf_warranty)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Vin }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Vin }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Vin })
+        </td>
+    </tr>
+}
+
+</table>

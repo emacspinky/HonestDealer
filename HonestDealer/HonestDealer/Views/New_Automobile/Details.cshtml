@@ -1,0 +1,34 @@
+﻿@model HonestDealer.Models.New_Automobile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>New_Automobile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Automobile.Transmission)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Automobile.Transmission)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manuf_warranty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manuf_warranty)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Vin }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<HonestDealer.Models.Salesman>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Available_appts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Used_flag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.New_flag)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Available_appts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Used_flag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.New_flag)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Employee_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Employee_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Employee_id })
+        </td>
+    </tr>
+}
+
+</table>

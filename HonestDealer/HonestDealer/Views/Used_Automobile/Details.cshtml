@@ -1,0 +1,58 @@
+﻿@model HonestDealer.Models.Used_Automobile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Used_Automobile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Automobile.Transmission)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Automobile.Transmission)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Number_of_repairs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number_of_repairs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dealer_warranty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dealer_warranty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Number_of_owners)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number_of_owners)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mileage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mileage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Vin }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -198,6 +198,10 @@
     <Compile Include="Migrations\201511281902292_DealershipMigration.Designer.cs">
       <DependentUpon>201511281902292_DealershipMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511281958136_AllControllers.cs" />
+    <Compile Include="Migrations\201511281958136_AllControllers.Designer.cs">
+      <DependentUpon>201511281958136_AllControllers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Automobile.cs" />
@@ -381,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511281902292_DealershipMigration.resx">
       <DependentUpon>201511281902292_DealershipMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511281958136_AllControllers.resx">
+      <DependentUpon>201511281958136_AllControllers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

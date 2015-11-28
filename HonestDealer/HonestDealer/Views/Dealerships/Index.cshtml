@@ -1,0 +1,81 @@
+﻿@model IEnumerable<HonestDealer.Models.Dealership>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Web_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Makes_sold)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dealer_rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Car_count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Open_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Close_time)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Web_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Makes_sold)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dealer_rating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Car_count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Open_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Close_time)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Dealer_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Dealer_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Dealer_id })
+        </td>
+    </tr>
+}
+
+</table>

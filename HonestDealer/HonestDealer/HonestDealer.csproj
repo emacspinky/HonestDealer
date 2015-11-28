@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CmController.cs" />
+    <Compile Include="Controllers\DealershipsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -178,12 +179,31 @@
     <Compile Include="Migrations\201511200127137_Initial.Designer.cs">
       <DependentUpon>201511200127137_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511281902292_DealershipMigration.cs" />
+    <Compile Include="Migrations\201511281902292_DealershipMigration.Designer.cs">
+      <DependentUpon>201511281902292_DealershipMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Automobile.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\Contracts.cs" />
+    <Compile Include="Models\Damaged_Automobile.cs" />
     <Compile Include="Models\Dealership.cs" />
+    <Compile Include="Models\Dealership_Phone.cs" />
+    <Compile Include="Models\Dealer_Sells.cs" />
+    <Compile Include="Models\Employs.cs" />
+    <Compile Include="Models\Exterior_Color.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Interior_Color.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Mechanic.cs" />
+    <Compile Include="Models\New_Automobile.cs" />
+    <Compile Include="Models\New_Sells.cs" />
+    <Compile Include="Models\Previous_Owner.cs" />
+    <Compile Include="Models\Salesman.cs" />
+    <Compile Include="Models\Used_Automobile.cs" />
+    <Compile Include="Models\Used_Sells.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -248,6 +268,11 @@
     <Content Include="Views\Cm\Details.cshtml" />
     <Content Include="Views\Cm\Edit.cshtml" />
     <Content Include="Views\Cm\Index.cshtml" />
+    <Content Include="Views\Dealerships\Create.cshtml" />
+    <Content Include="Views\Dealerships\Delete.cshtml" />
+    <Content Include="Views\Dealerships\Details.cshtml" />
+    <Content Include="Views\Dealerships\Edit.cshtml" />
+    <Content Include="Views\Dealerships\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -263,6 +288,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511200127137_Initial.resx">
       <DependentUpon>201511200127137_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511281902292_DealershipMigration.resx">
+      <DependentUpon>201511281902292_DealershipMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

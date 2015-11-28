@@ -1,0 +1,90 @@
+﻿@model HonestDealer.Models.Dealership
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Dealership</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Web_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Web_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Makes_sold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Makes_sold)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dealer_rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dealer_rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Car_count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Car_count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Open_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Open_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Close_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Close_time)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Dealer_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

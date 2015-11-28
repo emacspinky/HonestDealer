@@ -31,5 +31,7 @@ namespace HonestDealer.Models
         }
 
         public System.Data.Entity.DbSet<HonestDealer.Models.Contact> Contacts { get; set; }
+
+        public System.Data.Entity.DbSet<HonestDealer.Models.Dealership> Dealerships { get; set; }
     }
 }

@@ -9,6 +9,7 @@ namespace HonestDealer.Models
         [Key]
         [ForeignKey("Automobile")]
         public string Vin { get; set; }
+        public virtual Automobile Automobile { get; set; }
         public int Manuf_warranty { get; set; }
     }
 }

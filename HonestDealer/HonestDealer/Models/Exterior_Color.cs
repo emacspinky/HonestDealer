@@ -6,10 +6,11 @@ namespace HonestDealer.Models
 {
     public class Exterior_Color
     {
-        [Key]
+        [Key][Column(Order = 0)]
         [ForeignKey("Automobile")]
         public string Vin { get; set; }
-        [Key]
+        public virtual Automobile Automobile { get; set; }
+        [Key][Column(Order = 1)]
         public string Color { get; set; }
     }
 }

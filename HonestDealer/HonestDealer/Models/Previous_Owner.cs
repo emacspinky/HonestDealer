@@ -6,10 +6,11 @@ namespace HonestDealer.Models
 {
     public class Previous_Owner
     {
-        [Key]
+        [Key][Column(Order = 0)]
         [ForeignKey("Automobile")]
         public string Vin { get; set; }
-        [Key]
+        public virtual Automobile Automobile { get; set; }
+        [Key][Column(Order = 1)]
         [DataType(DataType.PhoneNumber)]
         public string Phone_number { get; set; }
         public string Name { get; set; }

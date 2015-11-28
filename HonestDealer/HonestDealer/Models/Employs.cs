@@ -6,11 +6,13 @@ namespace HonestDealer.Models
 {
     public class Employs
     {
-        [Key]
+        [Key][Column(Order = 0)]
         [ForeignKey("Dealership")]
         public int Dealer_id { get; set; }
-        [Key]
+        public virtual Dealership Dealership { get; set; }
+        [Key][Column(Order = 1)]
         [ForeignKey("Salesman")]
         public int Employee_id { get; set; }
+        public virtual Salesman Salesman { get; set; }
     }
 }

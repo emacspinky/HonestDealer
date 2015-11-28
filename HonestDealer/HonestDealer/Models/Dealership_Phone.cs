@@ -6,10 +6,11 @@ namespace HonestDealer.Models
 {
     public class Dealership_Phone
     {
-        [Key]
+        [Key][Column(Order = 0)]
         [ForeignKey("Dealership")]
         public int Dealer_id { get; set; }
-        [Key]
+        public virtual Dealership Dealership { get; set; }
+        [Key][Column(Order = 1)]
         [DataType(DataType.PhoneNumber)]
         public string Phone_number { get; set; }
     }

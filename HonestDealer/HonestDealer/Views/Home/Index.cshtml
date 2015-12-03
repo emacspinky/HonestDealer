@@ -2,30 +2,123 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+<div class="jumbotron" style="background-color: aquamarine">
+    <h1>HonestDealer.com</h1>
+    <p class="lead">Car Dealership Management System and Customer Search Tool.</p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<div class="row" style="background-color: #f2f2f2">
+    <div class="col-md-3" style="background-color: aquamarine">
+        <h2>Top Dealers</h2>
+        <ul>
+         <li>Kingdom Kia</li>
+         <li>Denny Ford</li>
+         <li>Al West</li>
+         <li>Fairground Auto Plaza</li>
+        </ul>
+
+        <h2>Top Salesmen</h2>
+        <ul>
+            <li>Joel Percyman</li>
+            <li>Dan Lin</li>
+            <li>Scott Bierpercy</li>
+            <li>Tyler Perrybaum</li>
+        </ul>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="col-md-3" style="background-color: white">
+
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div class="col-md-6">
+      <div class="row">    
+        <h1>Inventory</h1>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Select Dealer To Search
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+         <li><a href="#">Kingdom Kia</a></li>
+         <li><a href="#">Denny Ford</a></li>
+         <li><a href="#">Al West</a></li>
+         <li><a hred="#">Fairground Auto Plaza</a></li>
+         <li role="separator" class="divider"></li>
+         <li><a href="#">All Dealerships</a></li>
+        </ul>
+        </div>
+
+      </div>
+        
+      <div class="row"> 
+            
+        <div class="input-group" style="padding: 20px 20px 20px 0px">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+            </span>
+            <input type="text" class="form-control" placeholder="Search for...">
+
+        </div><!-- /input-group -->
+            
+      </div>
+
+      
+       
+      <div class="row">
+          <button type="button" class="btn btn-default">Advanced Search</button>
+      </div>
+          
+      </div>
+
+</div>
+
+<div class="row" style="background-color: #f2f2f2">
+    <div class="col-md-3" style="height: 600px; background-color: aquamarine;">
+    
     </div>
+    <div class="col-md-1" style="background-color: #f2f2f2">
+
+    </div>
+
+    <div class="col-md-8" style="background-color: #f2f2f2">
+         <h2 class="text-center">Featured Cars</h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <img src="~/Content/Images/car1.jpg" alt="Rust Bucket" style="width:200px;height:200px;">
+                <h4 class="text-center">$5</h4 class="text-center">
+                <p class="text-center">Rust Bucket</p>
+            </div>
+            <div class="col-md-4">
+                <img src="~/Content/Images/car2.jpg" alt="Green Machine" style="width:200px;height:200px;">
+                <h4 class="text-center">$75</h4>
+                <p class="text-center">Green Machine</p>
+            </div>
+            <div class="col-md-4">
+                <img src="~/Content/Images/car3.jpg" alt="Delorean DMC12" style="width:200px;height:200px;">
+                <h4 class="text-center">$250,000</h4>
+                <p class="text-center">Delorean DMC12</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <img src="~/Content/Images/car4.jpeg" alt="Stay-Puff Marshmellow Car" style="width:200px;height:200px;">
+                <h4 class="text-center">$150,000</h4>
+                <p class="text-center">Stay-Puff Marshmellow Car</p>
+            </div>
+            <div class="col-md-4">
+                <img src="~/Content/Images/car5.jpg.png" alt="Oscar Meyer Wiener Truck" style="width:200px;height:200px;">
+                <h4 class="text-center">$75,000</h4>
+                <p class="text-center">Oscar Meyer Wiener Truck</p>
+            </div>
+            <div class="col-md-4">
+                <img src="~/Content/Images/car6.jpg" alt="EV1" style="width:200px;height:200px;">
+                <h4 class="text-center">$1,000</h4>
+                <p class="text-center">EV1</p>
+            </div>
+        </div>
+    </div>
+
 </div>

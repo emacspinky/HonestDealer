@@ -15,9 +15,34 @@ namespace HonestDealer.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Dealerships
-        public ActionResult Index()
+        public ViewResult Index(string sortOrder, string searchString)
         {
-            return View(db.Dealerships.ToList());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.CarCountSortParm = sortOrder == "Car_count" ? "count_desc" : "Car_count";
+            //IQueryable<Dealership>
+            var dealerships = from d in db.Dealerships
+                              select d;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                dealerships = dealerships.Where(d => d.Name.ToUpper().Contains(searchString.ToUpper())
+                || d.Username.ToUpper().Contains(searchString.ToUpper()));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    dealerships = dealerships.OrderByDescending(d => d.Name);
+                    break;
+                case "Car_count":
+                    dealerships = dealerships.OrderBy(d => d.Car_count);
+                    break;
+                case "count_desc":
+                    dealerships = dealerships.OrderByDescending(d => d.Car_count);
+                    break;
+                default:
+                    dealerships = dealerships.OrderBy(d => d.Name);
+                    break;
+            }
+            return View(dealerships.ToList());
         }
 
         // GET: Dealerships/Details/5
@@ -46,7 +71,7 @@ namespace HonestDealer.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Dealer_id,Name,Web_address,Makes_sold,Dealer_rating,Car_count,Username,Password,Open_time,Close_time")] Dealership dealership)
+        public ActionResult Create([Bind(Include = "Name,Web_address,Makes_sold,Username,Password,Open_time,Close_time")] Dealership dealership)
         {
             if (ModelState.IsValid)
             {

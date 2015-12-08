@@ -1,21 +1,23 @@
-﻿@{
+﻿@*@autos IEnumerable<HonestDealer.Models.Automobiles>*@
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 
 <div class="jumbotron" style="background-color: aquamarine">
     <h1>HonestDealer.com</h1>
-    <p class="lead">Car Dealership Management System and Customer Search Tool.</p>
+    <p class="lead">Car Dealership Management System and Customer Search Tool</p>
 </div>
 
 <div class="row" style="background-color: #f2f2f2">
     <div class="col-md-3" style="background-color: aquamarine">
         <h2>Top Dealers</h2>
         <ul>
-         <li>Kingdom Kia</li>
-         <li>Denny Ford</li>
-         <li>Al West</li>
-         <li>Fairground Auto Plaza</li>
+            <li>Kingdom Kia</li>
+            <li>Denny Ford</li>
+            <li>Al West</li>
+            <li>Fairground Auto Plaza</li>
         </ul>
 
         <h2>Top Salesmen</h2>
@@ -27,63 +29,59 @@
         </ul>
     </div>
 
-    <div class="col-md-3" style="background-color: white">
+    <div class="col-md-9 text-center">
+        <div class="row">
+            <h1>Inventory</h1>
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Select Dealer To Search
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Kingdom Kia</a></li>
+                    <li><a href="#">Denny Ford</a></li>
+                    <li><a href="#">Al West</a></li>
+                    <li><a href="#">Fairground Auto Plaza</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">All Dealerships</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="row" style="padding-top:20px">
+            <div>
+                @using (Html.BeginForm("Index", "Automobiles", FormMethod.Get))
+                {
+                    <div title="Make, Model, Vin, Year, Price">
+                        <p>
+                            @Html.TextBox("searchString", "", new { style = "width:350px", placeholder = "Search for Automobiles..." })
+                            <input type="submit" value="Search" class="btn btn-default" />
+                        </p>
+                    </div>
+                }
+            </div>
+        </div>
 
     </div>
 
-    <div class="col-md-6">
-      <div class="row">    
-        <h1>Inventory</h1>
-        <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Select Dealer To Search
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-         <li><a href="#">Kingdom Kia</a></li>
-         <li><a href="#">Denny Ford</a></li>
-         <li><a href="#">Al West</a></li>
-         <li><a hred="#">Fairground Auto Plaza</a></li>
-         <li role="separator" class="divider"></li>
-         <li><a href="#">All Dealerships</a></li>
-        </ul>
-        </div>
-
-      </div>
-        
-      <div class="row"> 
-
-          
-            
-        <div class="input-group" style="padding: 20px 20px 20px 0px">
-            <input data-toggle="tooltip" title="Make, Model, Vin, Color, Year, Price" type="text" placeholder="Search For Cars..." name="secondname" />
-            <span>
-                <button type="button" class="btn btn-default">Search</button>
-            </span>
-
-        </div><!-- /input-group -->
-            
-      </div>
-
-      </div>
-
 </div>
 
-<div class="row" style="background-color: #f2f2f2">
+<div class="row" style="background-color:#f2f2f2">
     <div class="col-md-3" style="height: 600px; background-color: aquamarine;">
-    
+
     </div>
     <div class="col-md-1" style="background-color: #f2f2f2">
 
     </div>
 
     <div class="col-md-8" style="background-color: #f2f2f2">
-         <h2 class="text-center">Featured Cars</h2>
+        <h2 class="text-center">Featured Cars</h2>
 
         <div class="row">
             <div class="col-md-4">
                 <img src="~/Content/Images/car1.jpg" alt="Rust Bucket" style="width:200px;height:200px;">
-                <h4 class="text-center">$5</h4 class="text-center">
+                <h4 class="text-center">$5</h4>
                 <p class="text-center">Rust Bucket</p>
             </div>
             <div class="col-md-4">

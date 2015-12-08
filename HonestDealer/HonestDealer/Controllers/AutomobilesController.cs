@@ -15,9 +15,19 @@ namespace HonestDealer.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Automobiles
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Automobiles.ToList());
+            var automobiles = from a in db.Automobiles
+                              select a;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                automobiles = automobiles.Where(a => a.Make.ToUpper().Contains(searchString.ToUpper())
+                || a.Vin.ToUpper().Contains(searchString.ToUpper())
+                || a.Model.ToUpper().Contains(searchString.ToUpper())
+                || a.Year.ToString() == searchString);
+            }
+            return View(automobiles);
         }
 
         // GET: Automobiles/Details/5

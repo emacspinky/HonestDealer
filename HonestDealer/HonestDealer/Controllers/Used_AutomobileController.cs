@@ -39,7 +39,7 @@ namespace HonestDealer.Controllers
         // GET: Used_Automobile/Create
         public ActionResult Create()
         {
-            ViewBag.Vin = new SelectList(db.Automobiles, "Vin", "Transmission");
+            ViewBag.Vin = new SelectList(db.Automobiles, "Vin", "Vin");
             return View();
         }
 

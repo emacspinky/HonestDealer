@@ -7,24 +7,33 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add a Salesman", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by Name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Rating)
+            @Html.ActionLink("Rating", "Index", new { sortOrder = ViewBag.RatingSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Salary)
+            @Html.ActionLink("Salary", "Index", new { sortOrder = ViewBag.SalarySortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Phone_number)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Available_appts)
+            @Html.ActionLink("Available Appointments", "Index", new { sortOrder = ViewBag.ApptsSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Used_flag)

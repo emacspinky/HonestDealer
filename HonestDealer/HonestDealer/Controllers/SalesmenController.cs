@@ -15,9 +15,46 @@ namespace HonestDealer.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Salesmen
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
-            return View(db.Salesmen.ToList());
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.SalarySortParm = sortOrder == "Salary" ? "salary_desc" : "Salary";
+            ViewBag.RatingSortParm = sortOrder == "Rating" ? "rating_desc" : "Rating";
+            ViewBag.ApptsSortParm = sortOrder == "Available_appts" ? "appts_desc" : "Available_appts";    //IQueryable<Dealership>
+            var salesmen = from s in db.Salesmen
+                              select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                salesmen = salesmen.Where(s => s.Name.ToUpper().Contains(searchString.ToUpper()));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    salesmen = salesmen.OrderByDescending(s => s.Name);
+                    break;
+                case "salary_desc":
+                    salesmen = salesmen.OrderByDescending(s => s.Salary);
+                    break;
+                case "Salary":
+                    salesmen = salesmen.OrderBy(s => s.Salary);
+                    break;
+                case "appts_desc":
+                    salesmen = salesmen.OrderByDescending(s => s.Available_appts);
+                    break;
+                case "Available_appts":
+                    salesmen = salesmen.OrderBy(s => s.Available_appts);
+                    break;
+                case "rating_desc":
+                    salesmen = salesmen.OrderByDescending(s => s.Rating);
+                    break;
+                case "Rating":
+                    salesmen = salesmen.OrderBy(s => s.Rating);
+                    break;
+                default:
+                    salesmen = salesmen.OrderBy(s => s.Name);
+                    break;
+            }
+            return View(salesmen.ToList());
         }
 
         // GET: Salesmen/Details/5

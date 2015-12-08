@@ -43,11 +43,20 @@ namespace HonestDealer.Controllers
                 case "rating_desc":
                     dealerships = dealerships.OrderByDescending(d => d.Dealer_rating);
                     break;
+                case "Dealer_rating":
+                    dealerships = dealerships.OrderBy(d => d.Dealer_rating);
+                    break;
                 case "open_desc":
                     dealerships = dealerships.OrderByDescending(d => d.Open_time);
                     break;
+                case "Open_time":
+                    dealerships = dealerships.OrderBy(d => d.Open_time);
+                    break;
                 case "close_desc":
                     dealerships = dealerships.OrderByDescending(d => d.Close_time);
+                    break;
+                case "Close_time":
+                    dealerships = dealerships.OrderBy(d => d.Close_time);
                     break;
                 default:
                     dealerships = dealerships.OrderBy(d => d.Name);

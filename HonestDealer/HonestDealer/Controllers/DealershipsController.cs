@@ -19,7 +19,9 @@ namespace HonestDealer.Controllers
         {
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.CarCountSortParm = sortOrder == "Car_count" ? "count_desc" : "Car_count";
-            //IQueryable<Dealership>
+            ViewBag.RatingSortParm = sortOrder == "Dealer_rating" ? "rating_desc" : "Dealer_rating";
+            ViewBag.OpenTimeSortParm = sortOrder == "Open_time" ? "open_desc" : "Open_time";
+            ViewBag.CloseTimeSortParm = sortOrder == "Close_time" ? "close_desc" : "Close_time";            //IQueryable<Dealership>
             var dealerships = from d in db.Dealerships
                               select d;
             if (!String.IsNullOrEmpty(searchString))
@@ -37,6 +39,15 @@ namespace HonestDealer.Controllers
                     break;
                 case "count_desc":
                     dealerships = dealerships.OrderByDescending(d => d.Car_count);
+                    break;
+                case "rating_desc":
+                    dealerships = dealerships.OrderByDescending(d => d.Dealer_rating);
+                    break;
+                case "open_desc":
+                    dealerships = dealerships.OrderByDescending(d => d.Open_time);
+                    break;
+                case "close_desc":
+                    dealerships = dealerships.OrderByDescending(d => d.Close_time);
                     break;
                 default:
                     dealerships = dealerships.OrderBy(d => d.Name);

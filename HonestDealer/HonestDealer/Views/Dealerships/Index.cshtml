@@ -30,7 +30,7 @@
             @Html.DisplayNameFor(model => model.Makes_sold)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Dealer_rating)
+            @Html.ActionLink("Dealer Rating", "Index", new { sortOrder = ViewBag.RatingSortParm })
         </th>
         <th>
             @Html.ActionLink("Car Count", "Index", new { sortOrder = ViewBag.CarCountSortParm })
@@ -42,11 +42,11 @@
             @Html.DisplayNameFor(model => model.Password)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Open_time)
+            @Html.ActionLink("Open Time", "Index", new { sortOrder = ViewBag.OpenTimeSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Close_time)
-        </th>
+            @Html.ActionLink("Close Time", "Index", new { sortOrder = ViewBag.CloseTimeSortParm }) 
+       </th>
         <th></th>
     </tr>
 

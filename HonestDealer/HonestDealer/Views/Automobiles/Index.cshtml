@@ -18,11 +18,10 @@
     </p>
     <p>Automobile Count = <b>@Model.Count()</b></p>
 }
-
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Vin)
+            Dealership
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Year)
@@ -51,10 +50,11 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Vin)
+            @Html.DisplayFor(modelItem => item.Dealership.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Year)
@@ -81,9 +81,9 @@
             @Html.DisplayFor(modelItem => item.Damaged_flag)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Vin }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Vin }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Vin })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Vin }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Vin }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Vin })
         </td>
     </tr>
 }

@@ -101,90 +101,6 @@ namespace HonestDealer.Migrations
                 }
                 );
 
-            context.Automobiles.AddOrUpdate(p => p.Vin,
-                new Automobile
-                {
-
-                    Vin = "12345678901234567",
-                    Year = 2011,
-                    Transmission = "Manual",
-                    Mpg = 20,
-                    Make = "Ford",
-                    Model = "Focus",
-                    Body_type = "Sedan",
-                    Price = 50000,
-                    Damaged_flag = false,
-                },
-                new Automobile
-                {
-
-                    Vin = "1A1A1A1A1A1A1A1A1",
-                    Year = 2011,
-                    Transmission = "Auto",
-                    Mpg = 15,
-                    Make = "Dodge",
-                    Model = "Ram",
-                    Body_type = "Truck",
-                    Price = 20000,
-                    Damaged_flag = false,
-                },
-                new Automobile
-                {
-
-                    Vin = "ABC123ABC123ABC12",
-                    Year = 2013,
-                    Transmission = "Auto",
-                    Mpg = 26,
-                    Make = "Chevy",
-                    Model = "Cobalt",
-                    Body_type = "Sedan",
-                    Price = 40000,
-                    Damaged_flag = false,
-                },
-                new Automobile
-                {
-
-                    Vin = "C1C2C3C4C5C6C7C8C",
-                    Year = 2012,
-                    Transmission = "Manual",
-                    Mpg = 22,
-                    Make = "Toyota",
-                    Model = "Camery",
-                    Body_type = "Sedan",
-                    Price = 35000,
-                    Damaged_flag = true,
-                },
-                new Automobile
-                {
-
-                    Vin = "09876543210987654",
-                    Year = 2001,
-                    Transmission = "Auto",
-                    Mpg = 13,
-                    Make = "Mittsubishi",
-                    Model = "Galant",
-                    Body_type = "Sedan",
-                    Price = 5000,
-                    Damaged_flag = true,
-                }
-                );
-
-            context.Damaged_Automobile.AddOrUpdate(p => p.Vin,
-                new Damaged_Automobile
-                {
-
-                    Vin = "C1C2C3C4C5C6C7C8C",
-                    Part_name = "Hyper Overdrive",
-                    Location = "Engine",
-                },
-                new Damaged_Automobile
-                {
-                    Vin = "09876543210987654",
-                    Part_name = "Wipers",
-                    Location = "Windshield",
-                }
-                );
-
             context.Dealerships.AddOrUpdate(p => p.Name,
                 new Dealership
                 {
@@ -237,6 +153,94 @@ namespace HonestDealer.Migrations
                     Password = "fairchev",
                     Open_time = "10:00am",
                     Close_time = "5:00pm",
+                }
+                );
+
+            context.Automobiles.AddOrUpdate(p => p.Vin,
+                new Automobile
+                {
+                    Vin = "12345678901234567",
+                    Dealer_id = 1,
+                    Year = 2011,
+                    Transmission = "Manual",
+                    Mpg = 20,
+                    Make = "Ford",
+                    Model = "Focus",
+                    Body_type = "Sedan",
+                    Price = 50000,
+                    Damaged_flag = false,
+                },
+                new Automobile
+                {
+
+                    Vin = "1A1A1A1A1A1A1A1A1",
+                    Dealer_id = 1,
+                    Year = 2011,
+                    Transmission = "Auto",
+                    Mpg = 15,
+                    Make = "Dodge",
+                    Model = "Ram",
+                    Body_type = "Truck",
+                    Price = 20000,
+                    Damaged_flag = false,
+                },
+                new Automobile
+                {
+
+                    Vin = "ABC123ABC123ABC12",
+                    Dealer_id = 1,
+                    Year = 2013,
+                    Transmission = "Auto",
+                    Mpg = 26,
+                    Make = "Chevy",
+                    Model = "Cobalt",
+                    Body_type = "Sedan",
+                    Price = 40000,
+                    Damaged_flag = false,
+                },
+                new Automobile
+                {
+
+                    Vin = "C1C2C3C4C5C6C7C8C",
+                    Dealer_id = 1,
+                    Year = 2012,
+                    Transmission = "Manual",
+                    Mpg = 22,
+                    Make = "Toyota",
+                    Model = "Camary",
+                    Body_type = "Sedan",
+                    Price = 35000,
+                    Damaged_flag = true,
+                },
+                new Automobile
+                {
+
+                    Vin = "09876543210987654",
+                    Dealer_id = 1,
+                    Year = 2001,
+                    Transmission = "Auto",
+                    Mpg = 13,
+                    Make = "Mitsubishi",
+                    Model = "Galant",
+                    Body_type = "Sedan",
+                    Price = 5000,
+                    Damaged_flag = true,
+                }
+                );
+
+            context.Damaged_Automobile.AddOrUpdate(p => p.Vin,
+                new Damaged_Automobile
+                {
+
+                    Vin = "C1C2C3C4C5C6C7C8C",
+                    Part_name = "Hyper Overdrive",
+                    Location = "Engine",
+                },
+                new Damaged_Automobile
+                {
+                    Vin = "09876543210987654",
+                    Part_name = "Wipers",
+                    Location = "Windshield",
                 }
                 );
 

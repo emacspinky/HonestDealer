@@ -206,6 +206,14 @@
     <Compile Include="Migrations\201511281958136_AllControllers.Designer.cs">
       <DependentUpon>201511281958136_AllControllers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512090452519_automobiledealer.cs" />
+    <Compile Include="Migrations\201512090452519_automobiledealer.Designer.cs">
+      <DependentUpon>201512090452519_automobiledealer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512090523486_automobiledealer1.cs" />
+    <Compile Include="Migrations\201512090523486_automobiledealer1.Designer.cs">
+      <DependentUpon>201512090523486_automobiledealer1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Automobile.cs" />
@@ -380,6 +388,21 @@
     <Content Include="Views\Previous_Owner\Details.cshtml" />
     <Content Include="Views\Previous_Owner\Edit.cshtml" />
     <Content Include="Views\Previous_Owner\Index.cshtml" />
+    <Content Include="Views\AutomobilesDealer\Create.cshtml" />
+    <Content Include="Views\AutomobilesDealer\Delete.cshtml" />
+    <Content Include="Views\AutomobilesDealer\Details.cshtml" />
+    <Content Include="Views\AutomobilesDealer\Edit.cshtml" />
+    <Content Include="Views\AutomobilesDealer\Index.cshtml" />
+    <Content Include="Views\Automobiles1\Create.cshtml" />
+    <Content Include="Views\Automobiles1\Delete.cshtml" />
+    <Content Include="Views\Automobiles1\Details.cshtml" />
+    <Content Include="Views\Automobiles1\Edit.cshtml" />
+    <Content Include="Views\Automobiles1\Index.cshtml" />
+    <Content Include="Views\DealershipsAutomobile\Create.cshtml" />
+    <Content Include="Views\DealershipsAutomobile\Delete.cshtml" />
+    <Content Include="Views\DealershipsAutomobile\Details.cshtml" />
+    <Content Include="Views\DealershipsAutomobile\Edit.cshtml" />
+    <Content Include="Views\DealershipsAutomobile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -401,6 +424,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511281958136_AllControllers.resx">
       <DependentUpon>201511281958136_AllControllers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512090452519_automobiledealer.resx">
+      <DependentUpon>201512090452519_automobiledealer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512090523486_automobiledealer1.resx">
+      <DependentUpon>201512090523486_automobiledealer1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

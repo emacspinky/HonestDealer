@@ -13,6 +13,7 @@
     <div class="form-horizontal">
         <h4>Damaged_Automobile</h4>
         <hr />
+        model => model.Dealer_id = 1
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Vin, "Vin", htmlAttributes: new { @class = "control-label col-md-2" })

@@ -9,7 +9,7 @@
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
+        
     <div class="form-horizontal">
         <h4>Automobile</h4>
         <hr />
@@ -21,7 +21,15 @@
                 @Html.ValidationMessageFor(model => model.Vin, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    
+        <div class="form-group">
+            @Html.LabelFor(model => model.Dealer_id, "Dealership", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Dealer_id", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Dealer_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    
         <div class="form-group">
             @Html.LabelFor(model => model.Year, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -29,7 +37,7 @@
                 @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    
         <div class="form-group">
             @Html.LabelFor(model => model.Transmission, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -37,7 +45,7 @@
                 @Html.ValidationMessageFor(model => model.Transmission, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    
         <div class="form-group">
             @Html.LabelFor(model => model.Mpg, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -45,7 +53,7 @@
                 @Html.ValidationMessageFor(model => model.Mpg, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    
         <div class="form-group">
             @Html.LabelFor(model => model.Make, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -53,7 +61,7 @@
                 @Html.ValidationMessageFor(model => model.Make, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    
         <div class="form-group">
             @Html.LabelFor(model => model.Model, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -61,7 +69,7 @@
                 @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    
         <div class="form-group">
             @Html.LabelFor(model => model.Body_type, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -69,7 +77,7 @@
                 @Html.ValidationMessageFor(model => model.Body_type, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    
         <div class="form-group">
             @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -77,7 +85,7 @@
                 @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    
         <div class="form-group">
             @Html.LabelFor(model => model.Damaged_flag, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -87,7 +95,7 @@
                 </div>
             </div>
         </div>
-
+    
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -95,7 +103,7 @@
         </div>
     </div>
 }
-
+    
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>

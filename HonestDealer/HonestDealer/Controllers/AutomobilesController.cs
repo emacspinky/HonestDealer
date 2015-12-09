@@ -25,8 +25,12 @@ namespace HonestDealer.Controllers
                 automobiles = automobiles.Where(a => a.Make.ToUpper().Contains(searchString.ToUpper())
                 || a.Vin.ToUpper().Contains(searchString.ToUpper())
                 || a.Model.ToUpper().Contains(searchString.ToUpper())
+                || a.Dealership.Name.ToUpper().Contains(searchString.ToUpper())
                 || a.Year.ToString() == searchString);
             }
+
+            automobiles = automobiles.Include(a => a.Dealership);
+            
             return View(automobiles);
         }
 
@@ -48,6 +52,7 @@ namespace HonestDealer.Controllers
         // GET: Automobiles/Create
         public ActionResult Create()
         {
+            ViewBag.Dealer_id = new SelectList(db.Dealerships, "Dealer_id", "Name");
             return View();
         }
 
@@ -56,7 +61,7 @@ namespace HonestDealer.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Vin,Year,Transmission,Mpg,Make,Model,Body_type,Price,Damaged_flag")] Automobile automobile)
+        public ActionResult Create([Bind(Include = "Vin,Dealer_id,Year,Transmission,Mpg,Make,Model,Body_type,Price,Damaged_flag")] Automobile automobile)
         {
             if (ModelState.IsValid)
             {
@@ -65,6 +70,7 @@ namespace HonestDealer.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.Dealer_id = new SelectList(db.Dealerships, "Dealer_id", "Name", automobile.Dealer_id);
             return View(automobile);
         }
 
@@ -80,6 +86,7 @@ namespace HonestDealer.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Dealer_id = new SelectList(db.Dealerships, "Dealer_id", "Name", automobile.Dealer_id);
             return View(automobile);
         }
 
@@ -88,7 +95,7 @@ namespace HonestDealer.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Vin,Year,Transmission,Mpg,Make,Model,Body_type,Price,Damaged_flag")] Automobile automobile)
+        public ActionResult Edit([Bind(Include = "Vin,Dealer_id,Year,Transmission,Mpg,Make,Model,Body_type,Price,Damaged_flag")] Automobile automobile)
         {
             if (ModelState.IsValid)
             {
@@ -96,6 +103,7 @@ namespace HonestDealer.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Dealer_id = new SelectList(db.Dealerships, "Dealer_id", "Name", automobile.Dealer_id);
             return View(automobile);
         }
 

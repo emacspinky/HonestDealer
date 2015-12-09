@@ -7,8 +7,18 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add an Automobile", "Create")
 </p>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by Name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+    <p>Automobile Count = <b>@Model.Count()</b></p>
+}
+
 <table class="table">
     <tr>
         <th>
